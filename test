@@ -1,0 +1,14 @@
+php artisan admin:make UserController --model=App\User
+php artisan make:model Models/School --migration
+php artisan make:model Models/Teacher --migration
+php artisan make:model Models/Ad --migration
+php artisan make:model Models/Course --migration
+php artisan make:model Models/StudentCourse --migration
+php artisan make:model Models/Category --migration
+php artisan make:model Models/Student --migration
+php artisan make:model Models/CourseWeek --migration
+php artisan make:model Models/CourseIssus --migration
+php artisan make:model Models/CourseComment --migration
+php artisan make:model Models/CourseWeekContent --migration
+php artisan make:model Models/CourseWeekContentList --migration
+
