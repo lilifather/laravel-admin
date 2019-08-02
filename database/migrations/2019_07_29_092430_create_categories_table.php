@@ -14,8 +14,14 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
+            $table->unsignedInteger('parent_id')->comment('父类id');
+            $table->unsignedInteger('sort_num')->comment('排序id');
+            $table->unsignedTinyInteger('is_show')->comment('是否显示在主页');
+
+            $table->index('parent_id');
+            $table->index('is_show');
         });
     }
 

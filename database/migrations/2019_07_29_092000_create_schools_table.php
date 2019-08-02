@@ -14,8 +14,11 @@ class CreateSchoolsTable extends Migration
     public function up()
     {
         Schema::create('schools', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
+            $table->string('sch_name',30)->comment('学校名称');
+            $table->string('province',30)->comment('学校所在的省');
+            $table->string('city',30)->comment('学校所在的市');
         });
     }
 

@@ -14,8 +14,10 @@ class CreateProfessionsTable extends Migration
     public function up()
     {
         Schema::create('professions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
+            $table->unsignedInteger('class_id')->comment('类的id');
+            $table->string('profession_name',60)->comment('专业名称');
         });
     }
 

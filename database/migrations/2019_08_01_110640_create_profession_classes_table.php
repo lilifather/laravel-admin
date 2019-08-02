@@ -14,8 +14,9 @@ class CreateProfessionClassesTable extends Migration
     public function up()
     {
         Schema::create('profession_classes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
+            $table->string('class_name');
         });
     }
 

@@ -14,8 +14,15 @@ class CreateCourseWeekContentsTable extends Migration
     public function up()
     {
         Schema::create('course_week_contents', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
+            $table->string('title',30)->comment('课程周内容标题');
+            $table->string('intro',600)->comment('周课程描述');
+            $table->string('duration',30)->comment('持续时间');
+            $table->unsignedInteger('course_week_id')->comment('周课程id');
+            $table->index('course_week_id');
+
+
         });
     }
 

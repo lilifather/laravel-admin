@@ -14,8 +14,13 @@ class CreateCourseIssusesTable extends Migration
     public function up()
     {
         Schema::create('course_issuses', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
+            $table->string('question',255)->comment('问题');
+            $table->string('answer',2000)->comment('回答');
+            $table->unsignedInteger('course_id')->comment('课程id');
+
+            $table->index('course_id');
         });
     }
 

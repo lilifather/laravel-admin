@@ -14,8 +14,13 @@ class CreateSchoolProfessionsTable extends Migration
     public function up()
     {
         Schema::create('school_professions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
+            $table->unsignedInteger('school_id')->comment('学校id');
+            $table->unsignedInteger('class_id')->comment('学校id');
+            $table->index('school_id');
+            $table->index('class_id');
+
         });
     }
 
